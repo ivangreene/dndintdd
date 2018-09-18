@@ -22,4 +22,16 @@ public class CharacterTest {
         assertEquals(Alignment.GOOD, character.getAlignment());
     }
 
+    @Test
+    public void shouldHaveDefaultArmorClass() {
+        Character character = new Character();
+        assertEquals(10, character.getArmorClass());
+    }
+
+    @Test
+    public void shouldHaveDefaultHitPoints() {
+        Character character = new Character();
+        assertEquals(5, character.getHitPoints());
+    }
+
 }
