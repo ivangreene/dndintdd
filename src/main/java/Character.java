@@ -1,12 +1,14 @@
 public class Character {
     private String name;
     private Alignment alignment;
+    private Abilities abilities;
     private int armorClass;
     private int hitPoints;
 
     public Character() {
         this.armorClass = 10;
         this.hitPoints = 5;
+        this.abilities = new Abilities();
     }
 
     public String getName() {
@@ -25,6 +27,10 @@ public class Character {
         this.alignment = alignment;
     }
 
+    public Abilities getAbilities() {
+        return abilities;
+    }
+
     public void setAlignment(String alignment) {
         this.alignment = Alignment.valueOf(alignment);
     }
@@ -36,4 +42,5 @@ public class Character {
     public int getHitPoints() {
         return hitPoints;
     }
+
 }
