@@ -34,4 +34,25 @@ public class CharacterTest {
         assertEquals(5, character.getHitPoints());
     }
 
+    @Test
+    public void canAttackAndBeDamaged() {
+        Character character1 = new Character();
+        Character character2 = new Character();
+
+        // roll of 5
+        int hpBeforeAttack = character2.getHitPoints();
+        character1.attack(character2, 5);
+        assertEquals(hpBeforeAttack, character2.getHitPoints());
+
+        // roll of 10
+        hpBeforeAttack = character2.getHitPoints();
+        character1.attack(character2, 10);
+        assertEquals(hpBeforeAttack - 1, character2.getHitPoints());
+
+        // roll of 20
+        hpBeforeAttack = character2.getHitPoints();
+        character1.attack(character2, 20);
+        assertEquals(hpBeforeAttack - 2, character2.getHitPoints());
+    }
+
 }

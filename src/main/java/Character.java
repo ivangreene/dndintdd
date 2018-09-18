@@ -43,4 +43,22 @@ public class Character {
         return hitPoints;
     }
 
+    public void setHitPoints(int hitPoints) {
+        this.hitPoints = hitPoints;
+    }
+
+    public void attack(Character character, int roll) {
+        character.receiveDamage(roll);
+    }
+
+    public void receiveDamage(int roll) {
+        if (roll >= this.getArmorClass()) {
+            if (roll == 20) {
+                this.setHitPoints(this.getHitPoints() - 2);
+            } else {
+                this.setHitPoints(this.getHitPoints() - 1);
+            }
+        }
+    }
+
 }
