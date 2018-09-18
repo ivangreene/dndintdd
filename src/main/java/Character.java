@@ -1,5 +1,6 @@
 public class Character {
     private String name;
+    private Alignment alignment;
 
     public String getName() {
         return name;
@@ -7,5 +8,17 @@ public class Character {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Alignment getAlignment() {
+        return alignment;
+    }
+
+    public void setAlignment(Alignment alignment) {
+        this.alignment = alignment;
+    }
+
+    public void setAlignment(String alignment) {
+        this.alignment = Alignment.valueOf(alignment);
     }
 }

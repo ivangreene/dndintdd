@@ -11,4 +11,15 @@ public class CharacterTest {
         assertEquals("foo", character.getName());
     }
 
+    @Test
+    public void shouldSetAndGetAlignment() {
+        Character character = new Character();
+
+        character.setAlignment(Alignment.GOOD);
+        assertEquals(Alignment.GOOD, character.getAlignment());
+
+        character.setAlignment("GOOD");
+        assertEquals(Alignment.GOOD, character.getAlignment());
+    }
+
 }
